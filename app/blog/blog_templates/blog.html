@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Ladies, Start your Engines</h1>
+{% for p in posts %}
+<div class="instagram-rip-off">
+    <div class="card" style="width: 40vw;">
+        <img src="{{ p.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.title }}</h5>
+          <p class="card-text">{{ p.content }}</p>
+        </div>
+      </div>
+</div>
+{% endfor %}
+{% endblock content %}
