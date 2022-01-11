@@ -9,7 +9,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 auth= Blueprint('auth',__name__, template_folder="auth_template")
 from app.models import db
 
-@auth.route('/login', methods=["GET","POST"])
+@auth.route('/logIn', methods=["GET","POST"])
 def logIn():
     U_form=LoginForm()
     if request.method=="POST" and U_form.validate():
@@ -27,7 +27,7 @@ def logIn():
         return redirect(url_for('blog.blogHome'))
     return render_template('login.html', form=U_form)
 
-@auth.route('/signup', methods=["GET", "POST"])
+@auth.route('/signUp', methods=["GET", "POST"])
 def signUp():
     my_form= UserInfoForm()
     if request.method == "POST":

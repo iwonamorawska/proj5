@@ -29,3 +29,12 @@ class Post(db.Model):
         self.image = image
         self.content = content  
         self.user_id=user_id
+    
+    def to_dict(self):
+        return {
+            'id' : self.id,
+            'title': self.title,
+            'content':self.content,
+            'image':self.image,
+            'date_created':self.date_created, 
+            }
